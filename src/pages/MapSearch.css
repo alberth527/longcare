@@ -1,0 +1,384 @@
+/* 添加Leaflet的CSS */
+@import url('https://unpkg.com/leaflet@1.7.1/dist/leaflet.css');
+
+/* 地图查询页面样式 */
+.map-search-page {
+  padding: 40px 0;
+}
+
+.page-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.page-description {
+  color: #666;
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.map-search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.map-filters {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input-group {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.location-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+.search-location-btn {
+  background-color: #4A89DC;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.search-location-btn:hover {
+  background-color: #3D7AC8;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.current-location {
+  margin-top: 10px;
+}
+
+.locate-me-btn {
+  background-color: #5CB85C;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.locate-me-btn:hover {
+  background-color: #4CAE4C;
+}
+
+.location-status {
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.location-status.success {
+  background-color: #DFF0D8;
+  color: #3C763D;
+}
+
+.location-status.error {
+  background-color: #F2DEDE;
+  color: #A94442;
+}
+
+.map-view-container {
+  display: flex;
+  gap: 20px;
+  height: 70vh;
+}
+
+.map-sidebar {
+  flex: 0 0 350px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.map-sidebar h3 {
+  padding: 15px;
+  margin: 0;
+  background-color: #4A89DC;
+  color: white;
+}
+
+.nearby-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.nearby-item {
+  background-color: white;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nearby-item:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.nearby-item.selected {
+  border-left: 4px solid #4A89DC;
+  background-color: #f0f7ff;
+}
+
+.nearby-item h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.nearby-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.nearby-type {
+  background-color: #E9ECEF;
+  color: #495057;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.nearby-distance {
+  color: #6C757D;
+  font-size: 0.9rem;
+}
+
+.nearby-address {
+  color: #6C757D;
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.nearby-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.service-tag {
+  background-color: #e1f5fe;
+  color: #0288d1;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.view-detail, .view-on-map {
+  display: inline-block;
+  margin-right: 10px;
+  color: #4A89DC;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.view-detail:hover, .view-on-map:hover {
+  text-decoration: underline;
+}
+
+.map-display {
+  flex: 1;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Leaflet地圖容器樣式 */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* 用戶位置脈衝效果 */
+.user-location-marker {
+  background: transparent;
+}
+
+.pulse {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4285f4;
+  box-shadow: 0 0 0 rgba(66, 133, 244, 0.4);
+  animation: pulse 2s infinite;
+  position: relative;
+}
+
+.pulse:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid #4285f4;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(66, 133, 244, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(66, 133, 244, 0);
+  }
+}
+
+/* 搜尋位置標記樣式 */
+.search-location-marker {
+  background: transparent;
+}
+
+.search-pulse {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff5722;
+  box-shadow: 0 0 0 rgba(255, 87, 34, 0.4);
+  animation: search-pulse 2s infinite;
+  position: relative;
+}
+
+.search-pulse:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid #ff5722;
+  border-radius: 50%;
+  animation: search-pulse 2s infinite;
+}
+
+@keyframes search-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 87, 34, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 87, 34, 0);
+  }
+}
+
+/* 彈出窗口樣式 */
+.leaflet-popup-content-wrapper {
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  margin: 8px 10px;
+  line-height: 1.4;
+}
+
+/* 平板和移動端響應式樣式 */
+@media (max-width: 992px) {
+  .map-view-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .map-sidebar {
+    flex: none;
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .map-display {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .search-input-group {
+    flex-direction: column;
+  }
+
+  .location-input {
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .search-location-btn {
+    border-radius: 4px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .map-display {
+    height: 350px;
+  }
+} 

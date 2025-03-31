@@ -1,0 +1,138 @@
+{
+  "facilities": [
+    {
+      "id": 1,
+      "name": "安康護理之家",
+      "code": "NH001245",
+      "type": "護理之家",
+      "address": "臺北市中正區福州街00號",
+      "phone": "02-12345678",
+      "email": "contact@ankang.example.com",
+      "manager": "張小明",
+      "services": [
+        { "name": "居家服務", "startDate": "2022-01-01", "endDate": "2024-12-31" },
+        { "name": "護理服務", "startDate": "2022-01-01", "endDate": "2024-12-31" },
+        { "name": "復健服務", "startDate": "2023-01-01", "endDate": "2025-12-31" }
+      ],
+      "contractStartDate": "2022-01-01",
+      "contractEndDate": "2024-12-31",
+      "description": "安康護理之家成立於2010年，提供專業的長期照護服務，包括疾病管理、日常生活協助、情緒支持等全方位照顧。我們的團隊由專業護理師、照顧服務員、社工師等組成，為長者提供溫馨舒適的居住環境和專業照護。",
+      "facilities": ["無障礙設施", "醫療設備", "休閒區", "餐廳", "康樂室"],
+      "location": {
+        "lat": 25.0330,
+        "lng": 121.5654
+      }
+    },
+    {
+      "id": 2,
+      "name": "福樂日照中心",
+      "code": "DC002367",
+      "type": "日照中心",
+      "address": "臺北市信義區忠孝東路00號",
+      "phone": "02-87654321",
+      "email": "info@fule.example.com",
+      "manager": "林美玲",
+      "services": [
+        { "name": "日間照顧", "startDate": "2022-03-15", "endDate": "2024-03-14" },
+        { "name": "復健服務", "startDate": "2022-03-15", "endDate": "2024-03-14" }
+      ],
+      "contractStartDate": "2022-03-15",
+      "contractEndDate": "2024-03-14",
+      "description": "福樂日照中心提供長者白天的生活照顧、健康管理、文康休閒活動等服務，讓長者能在日間獲得適當的照顧，晚上回到家中與家人團聚。中心設有專業護理人員、照顧服務員及社工人員，為長者提供全方位的照顧。",
+      "facilities": ["無障礙設施", "活動區", "休息區", "復健區", "餐廳"],
+      "location": {
+        "lat": 25.0410,
+        "lng": 121.5640
+      }
+    },
+    {
+      "id": 3,
+      "name": "康復居家照護中心",
+      "code": "HC003589",
+      "type": "居家照護",
+      "address": "新北市板橋區文化路00號",
+      "phone": "02-23456789",
+      "email": "service@kangfu.example.com",
+      "manager": "王大明",
+      "services": [
+        { "name": "居家服務", "startDate": "2021-07-01", "endDate": "2023-12-31" },
+        { "name": "復健服務", "startDate": "2021-07-01", "endDate": "2023-12-31" }
+      ],
+      "contractStartDate": "2021-07-01",
+      "contractEndDate": "2023-12-31",
+      "description": "康復居家照護中心提供到宅服務，包括協助沐浴、進食、如廁、更換尿布等，以及陪同就醫、散步、居家環境整理等服務。我們的照顧服務員經過專業訓練，能夠為長者提供貼心的照顧。",
+      "facilities": ["辦公室", "會議室", "培訓教室"],
+      "location": {
+        "lat": 25.0120,
+        "lng": 121.4580
+      }
+    },
+    {
+      "id": 4,
+      "name": "仁愛老人照顧中心",
+      "code": "NH004721",
+      "type": "護理之家",
+      "address": "臺北市大安區仁愛路00號",
+      "phone": "02-27654321",
+      "email": "care@renai.example.com",
+      "manager": "李志明",
+      "services": [
+        { "name": "護理服務", "startDate": "2022-05-10", "endDate": "2024-05-09" },
+        { "name": "臨終關懷", "startDate": "2022-05-10", "endDate": "2024-05-09" }
+      ],
+      "contractStartDate": "2022-05-10",
+      "contractEndDate": "2024-05-09",
+      "description": "仁愛老人照顧中心提供24小時照顧服務，包括基本生活照顧、護理服務、復健服務、營養膳食等。我們特別著重於臨終關懷服務，協助長者安詳離世，並為家屬提供心理支持。",
+      "facilities": ["無障礙設施", "醫療設備", "休閒區", "餐廳", "臨終關懷病房"],
+      "location": {
+        "lat": 25.0339,
+        "lng": 121.5438
+      }
+    },
+    {
+      "id": 5,
+      "name": "陽光日照機構",
+      "code": "DC005832",
+      "type": "日照中心",
+      "address": "臺北市松山區南京東路00號",
+      "phone": "02-25678901",
+      "email": "info@sunshine.example.com",
+      "manager": "陳小華",
+      "services": [
+        { "name": "日間照顧", "startDate": "2022-01-15", "endDate": "2024-01-14" },
+        { "name": "交通接送", "startDate": "2022-01-15", "endDate": "2024-01-14" }
+      ],
+      "contractStartDate": "2022-01-15",
+      "contractEndDate": "2024-01-14",
+      "description": "陽光日照機構是一家充滿活力的日間照顧中心，提供多元化的活動和服務，包括健康促進、認知訓練、藝術治療等。特別的是，我們提供交通接送服務，解決家屬接送的困擾。",
+      "facilities": ["無障礙設施", "活動區", "休息區", "餐廳", "交通車"],
+      "location": {
+        "lat": 25.0520,
+        "lng": 121.5500
+      }
+    },
+    {
+      "id": 6,
+      "name": "長青安養中心",
+      "code": "NH006143",
+      "type": "護理之家",
+      "address": "臺中市西區民生路00號",
+      "phone": "04-23456789",
+      "email": "service@evergreen.example.com",
+      "manager": "黃麗華",
+      "services": [
+        { "name": "護理服務", "startDate": "2022-02-01", "endDate": "2024-01-31" },
+        { "name": "復健服務", "startDate": "2022-02-01", "endDate": "2024-01-31" },
+        { "name": "營養諮詢", "startDate": "2022-02-01", "endDate": "2024-01-31" }
+      ],
+      "contractStartDate": "2022-02-01",
+      "contractEndDate": "2024-01-31",
+      "description": "長青安養中心位於臺中市中心，交通便利，環境優美。中心提供專業的護理照顧、復健服務和營養諮詢，並定期舉辦各種活動，豐富長者的生活。",
+      "facilities": ["無障礙設施", "醫療設備", "花園", "餐廳", "圖書室"],
+      "location": {
+        "lat": 24.1431,
+        "lng": 120.6600
+      }
+    }
+  ]
+} 
