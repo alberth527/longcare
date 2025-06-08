@@ -117,18 +117,25 @@ const formatDate = (dateNum?: number): string => {
 };
 
 // 根據機構種類代碼獲取描述
+const typeMap: { [key: string]: string } = {
+  '1': '居家式服務類機構',
+  'A1': '老人養護中心',
+  'A3': '護理之家',
+  'B1': '居家護理所',
+  'B2': '醫院或診所',
+  'BF': '社區發展協會',
+  // 可以根據需要添加更多類型
+};
+
+// 根據機構種類代碼獲取描述
 const getTypeDescription = (typeCode: string): string => {
-  const typeMap: {[key: string]: string} = {
-    '1': '居家式服務類機構',
-    'A1': '老人養護中心',
-    'A3': '護理之家',
-    'B1': '居家護理所',
-    'B2': '醫院或診所',
-    'BF': '社區發展協會',
-    // 可以根據需要添加更多類型
-  };
-  
   return typeMap[typeCode] || '長照機構';
+};
+
+// 根據機構種類描述獲取代碼
+const getTypeCode = (description: string): string | undefined => {
+  const entry = Object.entries(typeMap).find(([, name]) => name === description);
+  return entry ? entry[0] : undefined;
 };
 
 // 獲取所有設施
@@ -177,9 +184,11 @@ export const filterFacilities = (
   serviceName?: string
 ): Facility[] => {
   let filteredFacilities = getAllFacilities();
-  
+
   if (type) {
-    filteredFacilities = filteredFacilities.filter(f => f.type === type);
+    // 傳入的類型可能是代碼或描述，先嘗試將描述轉換為代碼
+    const typeCode = typeMap[type] ? type : getTypeCode(type) || type;
+    filteredFacilities = filteredFacilities.filter(f => f.type === typeCode);
   }
   
   if (region) {
